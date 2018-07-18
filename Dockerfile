@@ -68,7 +68,7 @@ RUN set -xe; \
 		wget -O php.tar.gz.asc "$PHP_ASC_URL"; \
 		export GNUPGHOME="$(mktemp -d)"; \
 		for key in $GPG_KEYS; do \
-			gpg --keyserver keyserver.pgp.com --recv-keys "$key"; \
+			gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 		done; \
 		gpg --batch --verify php.tar.gz.asc php.tar.gz; \
 		rm -r "$GNUPGHOME"; \
@@ -182,6 +182,7 @@ RUN apk upgrade --update && apk add \
 && docker-php-ext-install ldap \
 && docker-php-ext-install -j$(nproc) iconv mcrypt \
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-&& docker-php-ext-install -j$(nproc) gd
+&& docker-php-ext-install -j$(nproc) gd \
+&& docker-php-ext-install mysql
 
 ADD ./www.conf /usr/local/etc/php-fpm.d/www.conf
