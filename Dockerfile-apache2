@@ -1,0 +1,4 @@
+FROM wolnosciowiec/alpine-php5.4-mysql:apache2
+
+RUN apk --update add apache2 apache2-utils apache2-http2 \
+    && a2enmod actions fastcgi alias
