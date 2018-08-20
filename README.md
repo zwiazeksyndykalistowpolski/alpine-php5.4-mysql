@@ -1,3 +1,3 @@
 # alpine-php5.4-mysql
 
-This Repo is forking from official repo of php-docker : https://github.com/docker-library/php. Custom for php 5.4 version
+PHP 5.4 on Alpine Linux with pdo_mysql and mysqlnd extensions installed.
