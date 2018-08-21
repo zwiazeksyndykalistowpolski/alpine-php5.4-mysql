@@ -1,0 +1,1 @@
+LoadModule info_module /usr/lib/apache2/mod_info.so

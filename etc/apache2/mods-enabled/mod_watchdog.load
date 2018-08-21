@@ -1,0 +1,1 @@
+LoadModule watchdog_module /usr/lib/apache2/mod_watchdog.so

@@ -1,0 +1,1 @@
+LoadModule dbd_module /usr/lib/apache2/mod_dbd.so
