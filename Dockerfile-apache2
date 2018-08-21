@@ -4,8 +4,6 @@ ENV APACHE_RUN_DIR=/var/run/apache2
 ENV APACHE_PID_FILE=/run/apache.pid
 
 RUN apk --update add apache2 apache2-utils apache2-proxy supervisor \
-    && sed -i 's#AllowOverride none#AllowOverride All#' /etc/apache2/httpd.conf \
-    && sed -i 's#^DocumentRoot ".*#DocumentRoot "/var/www"#g' /etc/apache2/httpd.conf \
     && mkdir /var/log/supervisor -p \
     && mkdir /run/apache2 \
     && rm /etc/apache2 /etc/apache2.conf -rf \
