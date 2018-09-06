@@ -171,4 +171,3 @@ RUN apk upgrade --update && apk add \
 && docker-php-ext-install mysql pdo_mysql
 
 ADD ./www.conf /usr/local/etc/php-fpm.d/www.conf
-ADD ./entrypoint.sh /entrypoint.sh
