@@ -168,6 +168,8 @@ RUN apk upgrade --update && apk add \
 && docker-php-ext-install -j$(nproc) iconv mcrypt \
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 && docker-php-ext-install -j$(nproc) gd \
-&& docker-php-ext-install mysql pdo_mysql
+&& docker-php-ext-install mysql pdo_mysql \
+&& addgroup -g 1800 -S deployer \
+&& adduser -u 1800 -D -S -G deployer deployer
 
 ADD ./www.conf /usr/local/etc/php-fpm.d/www.conf
