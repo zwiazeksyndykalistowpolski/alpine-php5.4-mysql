@@ -162,6 +162,7 @@ RUN apk upgrade --update && apk add \
   libmcrypt-dev \
   libpng-dev \
   dcron \
+  nano \
   bash \
 && docker-php-ext-configure ldap --with-libdir=lib/ \
 && docker-php-ext-install ldap \
